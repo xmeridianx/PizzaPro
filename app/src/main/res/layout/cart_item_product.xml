@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/productNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/productImageView"
+        android:text="Ветчина и грибы"
+        android:layout_marginStart="24dp"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/productDescriptionTextView"
+        android:text="Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус"
+        app:layout_constraintTop_toBottomOf="@+id/productNameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/productImageView"
+        android:layout_width="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="8dp"/>
+
+    <ImageView
+        android:id="@+id/productImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/pizza"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/productImageView"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="24dp"
+        android:backgroundTint="@color/secondaryLightColor"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+
+            android:visibility="visible"
+            android:id="@+id/buttonAddItem"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/add_button" />
+        <TextView
+            android:id="@+id/textViewQuantityItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+        <ImageButton
+            android:visibility="visible"
+            android:id="@+id/buttonDeleteItem"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/delete_button" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/productPriceTextView"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:text="От 345 р"
+        android:padding="10dp"
+        android:visibility="invisible"
+        android:textColor="@color/secondaryColor"
+        android:layout_marginStart="24dp"
+        android:backgroundTint="@color/secondaryLightColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/productImageView"
+        android:background="@drawable/price_background"
+        android:textSize="16sp" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

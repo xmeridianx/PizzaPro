@@ -1,16 +1,19 @@
-package com.example.pizzapro.view
+package com.example.pizzapro.view.products
 
+import android.annotation.SuppressLint
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pizzapro.R
+import com.example.pizzapro.SingletonCart
 import com.example.pizzapro.databinding.FragmentCategoriesBinding
-import com.example.pizzapro.viewmodel.CartViewModel
 import com.example.pizzapro.viewmodel.ProductsViewModel
 
 
@@ -30,9 +33,10 @@ class ProductsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val viewModelCart = ViewModelProvider(requireActivity()).get(CartViewModel::class.java)
+
         adapter = ProductsAdapter(requireContext(), {it ->
-            viewModelCart.addProduct(it)
+            SingletonCart.addProduct(it)
+            showAddedToCartMessage()
         })
 
         binding.recyclerViewProducts.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
@@ -44,11 +48,9 @@ class ProductsFragment : Fragment() {
                 adapter.setListProducts(it)
         }
         viewModel.loadProducts()
-
-
-
     }
 
-
-
+    private fun showAddedToCartMessage() {
+        Toast.makeText(context, "Добавлено", Toast.LENGTH_SHORT).show()
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.pizzapro.view
+package com.example.pizzapro.view.products
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.pizzapro.R
@@ -16,7 +15,7 @@ class ProductsAdapter(private val context: Context, private val onProductClickLi
 
     private val products = mutableListOf<Product>()
 
-    inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val productNameTextView: TextView = itemView.findViewById(R.id.productNameTextView)
         val productDescriptionTextView: TextView = itemView.findViewById(R.id.productDescriptionTextView)
         val productImageView: ImageView = itemView.findViewById(R.id.productImageView)

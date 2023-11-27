@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.CartFragment">
+    tools:context=".view.cart.CartFragment">
 
     <androidx.appcompat.widget.Toolbar
         app:layout_constraintTop_toTopOf="parent"
@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbarCart"
         app:layout_constraintBottom_toTopOf="@id/productPriceTextView"
-        android:id="@+id/cartRecycler"
+        android:id="@+id/recyclerCart"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:orientation="vertical"/>
@@ -65,9 +65,10 @@
         android:id="@+id/orderCartButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:textColor="@color/black"
         android:backgroundTint="@color/secondaryColor"
         android:drawableStart="@android:drawable/ic_menu_delete"
         android:paddingHorizontal="8dp"

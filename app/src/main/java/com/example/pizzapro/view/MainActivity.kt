@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.MenuItem
 import com.example.pizzapro.R
 import com.example.pizzapro.databinding.ActivityMainBinding
+import com.example.pizzapro.view.cart.CartFragment
+import com.example.pizzapro.view.products.ProductsFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
